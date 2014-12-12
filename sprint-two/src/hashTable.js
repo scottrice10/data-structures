@@ -34,17 +34,14 @@ HashTable.prototype.retrieve = function(k) {
 
 HashTable.prototype.remove = function(k) {
   var i = getIndexBelowMaxForKey(k, this._limit);
+  var tupleArray = this._storage.get(i) || [];
 
-  this._storage.each(function(tupleArray, hash, storage) {
-    if(i === hash){
-      for(var j = 0; j < tupleArray.length; j++) {
-        var tuple = tupleArray[j];
-        if(tuple[0] === k) {
-          storage[i].splice(tuple, 1);
-        }
-      }
+  for(var j = 0; j < tupleArray.length; j++) {
+    var tuple = tupleArray[j];
+    if(tuple[0] === k) {
+      tuple[1] = null;
     }
-  });
+  }
 };
 
 /*
