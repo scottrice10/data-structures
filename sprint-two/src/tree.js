@@ -11,10 +11,6 @@ var Tree = function(value){
   return newTree;
 };
 
-
-
-
-
 var treeMethods = {};
 
 treeMethods.addChild = function(value){
@@ -29,7 +25,7 @@ treeMethods.contains = function(target){
     result = true;
   } else {
     this.children.forEach(function(childTree){
-      result = childTree.contains(target);
+      result = result || childTree.contains(target);
     });
   }
   return result;
