@@ -25,7 +25,7 @@ treeMethods.contains = function(target){
     result = true;
   } else {
     this.children.forEach(function(childTree){
-      result = result || childTree.contains(target);
+      result = childTree.contains(target);
     });
   }
   return result;
