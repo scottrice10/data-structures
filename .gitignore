@@ -37,3 +37,12 @@ node_modules
 .floobit
 .floo
 .flooignore
+.idea/.name
+.idea/2014-12-data-structures.iml
+.idea/encodings.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/scopes/scope_settings.xml
