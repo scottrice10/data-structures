@@ -16,6 +16,7 @@ HashTable.prototype.insert = function(k, v){
     if (key === k) {
       found = true;
       tuple[1] = v;
+      break;
     }
   };
   if (!found) {
@@ -48,7 +49,7 @@ HashTable.prototype.retrieve = function(k){
 HashTable.prototype.remove = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
   var tupleArray = this._storage.get(i) || [];
-  var found = false;
+  //var found = false;
   //tupleArray.each(function(value){
   for (var j = 0; j < tupleArray.length; j++) {
     var tuple = tupleArray[j];
